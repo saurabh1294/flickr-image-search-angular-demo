@@ -11,6 +11,7 @@ export class FlickrImageGalleryComponent implements OnInit {
   imageQuery: any;
   images: boolean;
   items: any[];
+  errors: any;
 
   constructor(private flickrDataService: FlickrDataService) {}
 
@@ -31,6 +32,13 @@ export class FlickrImageGalleryComponent implements OnInit {
       console.log(result);
       this.images = true;
       this.items = result.items;
-    });
+    },
+    error => {
+      this.errors = error;
+      // error condition
+      console.log('Error occured in fetching images', error);
+      alert('Error occured '+ JSON.stringify(error, null, 4));
+    }
+    );
   }
 }
