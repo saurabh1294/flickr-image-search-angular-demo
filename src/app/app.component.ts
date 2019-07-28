@@ -38,6 +38,7 @@ export class FlickrImageGalleryComponent implements OnInit {
         this.errors = error;
         // error condition
         console.log('Error occured in fetching images', error);
+        // beautify the stringified JSON error object with 4 spaces indentation
         alert('Error occured ' + JSON.stringify(error, null, 4));
       }
     );
