@@ -25,7 +25,6 @@ export class FlickrImageGalleryComponent implements OnInit {
   }
 
   search() {
-    console.log('inside search()', this);
     this.flickrDataService.getImages(this.imageQuery).subscribe(
       response => {
         console.log(response, 'this is the response');

@@ -13,10 +13,14 @@
 	<div *ngIf="images" class ="main-content col-lg-12">
 		<ul class="img-list">
 			<li *ngFor="let item of items" class="feature">
-				<a href="#">
+				<a href={{item.link}} target="_blank">
 				  <img src={{item.media.m}} />
 				</a>
+				<span>{{item.title | slice:0:40}}...</span>
 			</li>
 		</ul>
+	</div>
+	<div *ngIf="!images" class ="main-content col-lg-12">
+		<h4>Loading...</h4>
 	</div>
 </form>

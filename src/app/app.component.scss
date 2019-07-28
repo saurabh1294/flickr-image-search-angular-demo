@@ -18,6 +18,10 @@
     padding-bottom: 3em;
     margin: 0;
   }
+
+  .search-form {
+    text-align: center;
+  }
   
   a {
     text-decoration: none;
@@ -160,7 +164,7 @@
     .img-list li {
       text-align: center;
       margin: 20px 0 0;
-      font-size: 0;
+      font-size: 14px;
     }
   }
   
@@ -181,7 +185,7 @@
       border: 1px solid white;
       padding: 0;
       overflow: hidden;
-      font-size: 0;
+      font-size: 14px;
     }
   }
   
@@ -200,8 +204,5 @@
   @media (min-width: 769px) { 
     .img-list li:nth-of-type(3n+1) {
       clear: left;
-    }
-    img {
-        margin: 0;
     }
   }

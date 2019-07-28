@@ -1,15 +1,15 @@
 const path = require('path');
 const forEach = require('lodash/forEach');
-const CONFIG_POSTS = require('./mock.conf.post');
+const CONFIG_GETS = require('./mock.conf.get');
 const fs = require('fs');
 
 
 
-const MOCK_CONF_POST = Object.assign({}, CONFIG_POSTS);
+const MOCK_CONF_GET = Object.assign({}, CONFIG_GETS);
 
 const appRouter = function(app) {
 
-  forEach(MOCK_CONF_POST, (mock, url) => {
+  forEach(MOCK_CONF_GET, (mock, url) => {
     app.get(url, (req, res) => {
       const target = path.join(__dirname, mock);
       console.log('[mock] serving', mock);
