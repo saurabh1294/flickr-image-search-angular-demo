@@ -1,0 +1,22 @@
+<form class="search-form">
+	<label class="is-hidden" for="image search">Search</label>
+	<input
+		type="search"
+		name="search"
+		[(ngModel)]="imageQuery"
+		placeholder="Search Flickr Feed Images..."
+	/>
+	<button type="submit" id="search" class="search-button" (click)="search()">
+		<i class="material-icons icon-search">search</i>
+	</button>
+
+	<div *ngIf="images" class ="main-content col-lg-12">
+		<ul class="img-list">
+			<li *ngFor="let item of items" class="feature">
+				<a href="#">
+				  <img src={{item.media.m}} />
+				</a>
+			</li>
+		</ul>
+	</div>
+</form>
