@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
+const request = require('request-promise');
 
 var originsWhitelist = [
     'http://localhost:4200'
@@ -14,6 +15,25 @@ var corsOptions = {
     },
     credentials: true
 }
+
+
+const fireRequest = function(req, res, query = "Australia") {
+    const payload = (req.query) ? req.query.query : query;
+    const filckrAPIURL = `https://api.flickr.com/services/feeds/photos_public.gne?tags=${payload}
+    &format=json&jsoncallback=JSONP_CALLBACK`;
+
+    request.get({ url: filckrAPIURL,
+    gzip: true },
+        function(error, response, body) {
+        if (error) {
+            res.send({error : error});
+        }
+        // manipulate body here to return JSON object
+        res.json(body); // converts and sends JSON
+    });
+}
+
+
 // whitelist domains for CORS/CORB
 app.use(cors(corsOptions));
 
@@ -28,10 +48,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/getImages', function(req, res) {
-    res.send({data: "Test endpoint which will send flickr images"});
+    fireRequest(req, res, "Australia");
 });
-
-const routes = require("./mock.routes.js")(app);
 
 const server = app.listen(3456, function() {
     console.log("[mock] mock server listening on port %s...", server.address().port);

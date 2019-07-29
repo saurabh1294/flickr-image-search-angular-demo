@@ -63,3 +63,9 @@ yarn lint:fix
 
 yarn lint
 
+
+## NodeJS Server test endpoints
+Just in order to test different endpoints alone. Once the NodeJS server is started up on port 3456,
+go to the browser and type http://localhost:3456/getImages?query='<tag>' to see the response
+JSON in the browser window. (Replace tag with the actual search query string/tag)
+

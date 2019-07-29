@@ -39,6 +39,7 @@
     "core-js": "^2.5.4",
     "cors": "latest",
     "nvm": "0.0.4",
+    "request-promise": "^4.2.4",
     "rxjs": "6.0.0",
     "yarn": "latest",
     "zone.js": "^0.8.26"
