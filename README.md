@@ -67,6 +67,6 @@ yarn lint
 ## NodeJS Server test endpoints
 Just in order to test different endpoints alone, once the NodeJS server is started up on port 3456,
 using the command node mocks/mock.server.js, go to the browser and type 
-http://localhost:3456/getImages?query='<tag>' to see the response JSON in the browser window.
+http://localhost:3456/getImages?query='tag' to see the response JSON in the browser window.
 (Replace tag with the actual search query string/tag).
 
