@@ -17,7 +17,7 @@ var corsOptions = {
 }
 
 
-const fireRequest = function(req, res, query = "Australia") {
+const fireRequest = function(req, res, query) {
 	const payload = (req.query) ? req.query.query : query;
 	const filckrAPIURL = `https://api.flickr.com/services/feeds/photos_public.gne?tags=${payload}
     &format=json&jsoncallback=JSONP_CALLBACK`;
